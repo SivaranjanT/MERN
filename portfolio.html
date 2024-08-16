@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="myport.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: absolute; /* Positioned absolutely */
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 2; /* Higher z-index to appear in front of content */
+            pointer-events: none; /* Prevent bubbles from interfering with clicks */
+        }
+
+        .bub {
+            width: 60px;
+            height: 60px;
+            border: 1px solid white;
+            box-shadow: inset 1px -1px 5px rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1); /* More transparent background */
+            backdrop-filter: blur(2px);
+            position: absolute;
+            bottom: 0;
+            animation: bubble 10s ease-in infinite;
+        }
+
+        .bub::before {
+            position: absolute;
+            content: "";
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            top: 15px;
+            right: 13px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Bubble positions */
+        .bub.a { left: 10%; }
+        .bub.b { left: 3%; }
+        .bub.c { left: 81%; }
+        .bub.d { left: 90%; }
+        .bub.e { left: 3%; }
+        .bub.f { left: 3%; }
+        .bub.g { left: 45%; }
+        .bub.h { left: 67%; }
+        .bub.i { left: 30%; }
+        .bub.j { left: 65%; }
+        .bub.k { left: 45%; }
+        .bub.l { left: 3%; }
+
+        @keyframes bubble {
+            0% { opacity: 0; }
+            10%, 93% { opacity: 0.6; } /* Adjust opacity to make content more visible */
+            100% {
+                transform: translate(90px, -800px);
+                display: none;
+            }
+        }
+
+        /* Content z-index lower than bubbles */
+        .navbar, .welcome-section, .about-section, .projects-section, .contact-section {
+            position: relative;
+            z-index: 1; /* Lower z-index than bubbles */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="bub a"></span>
+        <span class="bub b"></span>
+        <span class="bub c"></span>
+        <span class="bub d"></span>
+        <span class="bub e"></span>
+        <span class="bub f"></span>
+        <span class="bub g"></span>
+        <span class="bub h"></span>
+        <span class="bub i"></span>
+        <span class="bub j"></span>
+        <span class="bub k"></span>
+        <span class="bub l"></span>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <!-- Your logo here -->
+        </div>
+        <ul class="nav-links">
+            <li><a href="#welcome">HOME</a></li>
+            <li><a href="#about">ABOUT ME</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <section id="welcome" class="welcome-section">
+        <img src="MyImage.jpg" alt="My Image">
+        <h1>WELCOME TO MY PORTFOLIO</h1>
+        <p>I'm a passionate developer dedicated to creating innovative solutions.</p>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>ABOUT ME</h2>
+        <p>Hello! I'm a web developer with a strong focus on front-end technologies and user experience. I love creating interactive and visually appealing websites Lorem, ipsum dolor sit amet consectetur adipisicing elit...</p>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>MY PROJECTS</h2>
+        <div class="project">
+            <h3>PROJECT 1</h3>
+            <p>This is a description of my first project. It was built using HTML, CSS, and JavaScript Lorem ipsum dolor sit amet...</p>
+        </div>
+        <div class="project">
+            <h3>PROJECT 2</h3>
+            <p>This is a description of my second project. It was built using React and Node.js Lorem ipsum dolor sit amet consectetur...</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>CONTACT ME</h2>
+        <p>If you have any queries, feel free to reach out.</p>
+        <center>
+            <h2>Email: sivaranjanit2003@gmail.com</h2>
+            <h2>Contact: 9361464160</h2>
+        </center>
+    </section>
+</body>
+</html>
+
